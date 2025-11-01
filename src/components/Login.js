@@ -1,19 +1,21 @@
-import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-import API from '../services/api';
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import API from "../services/api";
 
 export default function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const nav = useNavigate();
 
   const handleLogin = async () => {
     try {
-      const res = await API.post('/auth/login', { username, password });
-      localStorage.setItem('token', res.data.token);
-      nav('/welcome');
-    } catch {
-      alert('Login failed. Please check credentials or signup.');
+      const res = await API.post("/auth/login", { username, password });
+      localStorage.setItem("token", res.data.data.token);
+
+      nav("/welcome");
+    } catch (err) {
+      console.error("Login failed", err.response?.data);
+      alert("Login failed. Please check credentials or signup.");
     }
   };
 
@@ -39,7 +41,10 @@ export default function Login() {
       </button>
 
       <p className="mt-4">
-        New user? <Link to="/signup" className="text-blue-600 underline">Signup here</Link>
+        New user?{" "}
+        <Link to="/signup" className="text-blue-600 underline">
+          Signup here
+        </Link>
       </p>
     </div>
   );
