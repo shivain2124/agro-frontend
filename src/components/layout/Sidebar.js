@@ -14,7 +14,7 @@ export default function Sidebar({ isOpen }) {
             <Link to="/welcome">🏠 Welcome</Link>
             <Link to="/dashboard">📊 Dashboard</Link>
             <Link to="/irrigation">💧 Irrigation</Link>
-            <Link to="/MLMmodel">🤖 ML Model</Link>
+            <Link to="/MLModel">🤖 ML Model</Link>
             <Link to="/profile">👤 Profile</Link>
             <Link to="/">🚪 Logout</Link>
           </nav>
