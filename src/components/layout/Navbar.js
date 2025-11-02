@@ -1,5 +1,5 @@
-import { useNavigate } from 'react-router-dom';
-import { useState, useRef, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
 
 export default function Navbar({ title = "Dashboard", toggleSidebar }) {
   const nav = useNavigate();
@@ -23,10 +23,12 @@ export default function Navbar({ title = "Dashboard", toggleSidebar }) {
   };
 
   return (
-    <div className="bg-white px-6 py-4 shadow fixed top-0 z-10 flex justify-between items-center w-full ml-64">
+    <div className="bg-white px-6 py-4 shadow top-0 z-10 flex justify-between items-center w-full">
       {/* Left Side */}
       <div className="flex items-center gap-4">
-        <button onClick={toggleSidebar} className="text-2xl">☰</button>
+        <button onClick={toggleSidebar} className="text-2xl">
+          ☰
+        </button>
         <h2 className="text-xl font-bold text-gray-800">{title}</h2>
       </div>
 
@@ -41,7 +43,7 @@ export default function Navbar({ title = "Dashboard", toggleSidebar }) {
         {dropdownOpen && (
           <div className="absolute right-0 mt-2 w-40 bg-white shadow-lg rounded p-2 z-50">
             <button
-              onClick={() => nav('/profile')}
+              onClick={() => nav("/profile")}
               className="block w-full text-left px-4 py-2 hover:bg-gray-100"
             >
               👤 Edit Profile
