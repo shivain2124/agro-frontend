@@ -5,8 +5,7 @@ import Welcome from './components/Welcome';
 import Dashboard from './components/Dashboard';
 import Irrigation from './components/Irrigation';
 import Profile from './components/Profile';
-// ...
-
+import MLModel from './components/MLModel';
 
 
 function App() {
@@ -19,6 +18,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/irrigation" element={<Irrigation />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/ml" element={<MLModel />} />
       </Routes>
     </BrowserRouter>
   );
